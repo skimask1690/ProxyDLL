@@ -26,7 +26,7 @@ The resulting DLL behaves like the original from the loader’s perspective whil
 4. Writes an exports definition file forwarding calls to the real DLL
 5. Generates a C stub that:
    - XOR-decodes the command at runtime
-   - Launches it via `CreateProcessA` with no console window
+   - Launches it via `CreateProcessA` with a hidden console window
 6. Compiles the proxy DLL with MinGW GCC
 
 ## Usage
@@ -57,4 +57,5 @@ This tool is provided for educational and research purposes only. The author is 
 ## License
 
 [MIT License](LICENSE)
+
 
