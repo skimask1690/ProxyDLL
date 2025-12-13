@@ -15,9 +15,6 @@ def detect_arch(pe):
         pass
     return "unknown"
 
-def safe_basename(path):
-    return os.path.basename(path)
-
 def write_def(def_path, libname, source_basename, exports):
     with open(def_path, "w", newline="\n") as f:
         f.write(f"LIBRARY {libname}\nEXPORTS\n")
@@ -100,8 +97,8 @@ def main():
         print("No named exports found in the source DLL.")
         sys.exit(1)
 
-    libname = safe_basename(output_dll)
-    source_basename = safe_basename(source_dll)
+    libname = os.path.basename(output_dll)
+    source_basename = os.path.basename(source_dll)
     def_path = "exports.def"
     c_path = "stub.c"
 
