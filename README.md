@@ -32,13 +32,13 @@ The resulting DLL behaves like the original from the loader’s perspective whil
 ## Usage
 
 ```sh
-ProxyDLL.py <source.dll> <output.dll> <command>
+python ProxyDLL.py <source.dll> <output.dll> <command>
 ```
 
 ## Example
 
 ```sh
-ProxyDLL.py source.dll proxy.dll "cmd.exe /c calc.exe"
+python ProxyDLL.py source.dll proxy.dll "cmd.exe /c calc.exe"
 ```
 
 Place the resulting DLL in a directory where it will be loaded instead of the original.
@@ -57,5 +57,3 @@ This tool is provided for educational and research purposes only. The author is 
 ## License
 
 [MIT License](LICENSE)
-
-
